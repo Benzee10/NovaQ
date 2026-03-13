@@ -54,3 +54,32 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 Button.displayName = "Button";
 
 export { Button };
+
+export function buttonVariants(options?: {
+  variant?: ButtonProps["variant"];
+  size?: ButtonProps["size"];
+  className?: string;
+}): string {
+  const { variant = "default", size = "default", className } = options ?? {};
+  const variantClasses: Record<NonNullable<ButtonProps["variant"]>, string> = {
+    default: "bg-primary text-primary-foreground shadow-lg shadow-primary/20",
+    secondary: "bg-secondary text-secondary-foreground shadow-md shadow-secondary/10",
+    outline: "border border-border bg-transparent hover:bg-accent text-foreground",
+    ghost: "hover:bg-accent hover:text-accent-foreground text-foreground",
+    link: "text-primary underline-offset-4 hover:underline",
+    whatsapp: "bg-whatsapp text-whatsapp-foreground shadow-lg shadow-whatsapp/20",
+    destructive: "bg-destructive text-destructive-foreground shadow-md shadow-destructive/20",
+  };
+  const sizeClasses: Record<NonNullable<ButtonProps["size"]>, string> = {
+    default: "h-11 px-6 py-2",
+    sm: "h-9 px-4 text-xs",
+    lg: "h-14 px-8 text-lg",
+    icon: "h-11 w-11",
+  };
+  return cn(
+    "inline-flex items-center justify-center rounded-xl text-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+    variantClasses[variant],
+    sizeClasses[size],
+    className
+  );
+}

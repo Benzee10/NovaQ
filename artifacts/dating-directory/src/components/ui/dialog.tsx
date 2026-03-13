@@ -55,3 +55,7 @@ export function DialogHeader({ className, ...props }: React.HTMLAttributes<HTMLD
 export function DialogTitle({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
   return <h2 className={cn("text-2xl font-serif font-semibold leading-none tracking-tight", className)} {...props} />;
 }
+
+export function DialogContent({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+  return <div className={cn("w-full", className)} {...props} />;
+}

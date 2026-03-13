@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { getProfileImage } from "@/lib/utils";
-import type { Profile } from "@workspace/api-client-react/src/generated/api.schemas";
+import type { Profile } from "@workspace/api-client-react";
 
 interface ProfileCardProps {
   profile: Profile;
@@ -56,7 +56,7 @@ export function ProfileCard({ profile, index = 0 }: ProfileCardProps) {
           </p>
           
           <div className="flex flex-wrap gap-1.5 mt-4 mb-5">
-            {profile.interests?.slice(0, 3).map((interest, i) => (
+            {profile.interests?.slice(0, 3).map((interest: string, i: number) => (
               <span key={i} className="text-[10px] px-2 py-1 rounded-md bg-accent text-accent-foreground font-medium uppercase tracking-wider">
                 {interest}
               </span>

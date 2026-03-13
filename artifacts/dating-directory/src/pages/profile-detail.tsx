@@ -12,8 +12,9 @@ export default function ProfileDetail() {
   const [, params] = useRoute("/profiles/:id");
   const id = params?.id ? parseInt(params.id, 10) : 0;
   
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { data: profile, isLoading, error } = useGetProfile(id, {
-    query: { enabled: !!id }
+    query: { enabled: !!id } as any
   });
 
   if (isLoading) {
