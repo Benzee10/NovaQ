@@ -1,19 +1,10 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "artifacts/dating-directory/package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "dist/public" }
-    },
-    {
-      "src": "api/index.ts",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    { "src": "/api/(.*)", "dest": "/api/index.ts" },
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/index.html" }
+  "installCommand": "pnpm install",
+  "buildCommand": "pnpm --filter @workspace/dating-directory run build",
+  "outputDirectory": "artifacts/dating-directory/dist/public",
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "/api/index" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
