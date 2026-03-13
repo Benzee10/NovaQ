@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Dating Directory"
+version = "1.0.0"
+id = "artifacts/dating-directory"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+localPort = 19825
+name = "web"
+paths = ["/"]
+
+[services.development]
+run = "pnpm --filter @workspace/dating-directory run dev"
+
+[services.env]
+PORT = "19825"
+BASE_PATH = "/"
+
+[services.production]
+build = ["pnpm", "--filter", "@workspace/dating-directory", "run", "build"]
+publicDir = "artifacts/dating-directory/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"

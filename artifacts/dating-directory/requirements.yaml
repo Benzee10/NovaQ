@@ -1,0 +1,19 @@
+packages:
+  "framer-motion": "For smooth page transitions and premium scroll animations"
+  "clsx": "Utility for constructing className strings conditionally"
+  "tailwind-merge": "Utility for merging tailwind classes safely"
+  "react-hook-form": "Form state management"
+  "@hookform/resolvers": "Zod validation for react-hook-form"
+
+images:
+  - path: "artifacts/dating-directory/public/images/hero-bg.png"
+    description: "Luxurious abstract dark burgundy and deep rose gradient mesh with subtle gold dust, soft elegant lighting, out of focus, romantic and premium."
+    aspect_ratio: "16:9"
+  - path: "artifacts/dating-directory/public/images/logo.png"
+    description: "Minimalist elegant intertwined rings forming a stylized rose in shiny gold on a transparent background, luxury brand logo."
+    aspect_ratio: "1:1"
+
+notes:
+  - Using generated React Query hooks from @workspace/api-client-react.
+  - Using framer-motion for high-end micro-interactions.
+  - Simple client-side auth for admin ("admin123").

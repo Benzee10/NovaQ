@@ -16,6 +16,20 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - **API codegen**: Orval (from OpenAPI spec)
 - **Build**: esbuild (CJS bundle)
 
+## Dating Directory App
+
+A premium adult dating directory Telegram mini app with:
+- **Homepage** - Hero section "Meet Real Women Near You", profile preview grid, 18+ disclaimer
+- **Profiles Directory** - Full searchable profile grid with verified badges
+- **Profile Detail** - Full profile with WhatsApp contact button
+- **Admin Panel** - Password-protected dashboard (password: `admin123`) for managing profiles
+
+### Database
+- `profiles` table with: name, age, location, bio, interests[], whatsapp, photo_url, active, verified, createdAt
+
+### Admin Access
+Navigate to `/admin` and enter password: `admin123`
+
 ## Structure
 
 ```text
